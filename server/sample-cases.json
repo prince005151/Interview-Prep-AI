@@ -1,0 +1,37 @@
+[
+  {
+    "jobDescription": "Must have strong system design experience. Must have Python and SQL. Nice to have mentoring experience.",
+    "companyUrl": "https://example.com",
+    "role": "backend",
+    "daysRequested": 3,
+    "minutesPerSession": 45
+  },
+  {
+    "jobDescription": "Must have React experience and TypeScript. Must have API integration experience. Nice to have design system work.",
+    "companyUrl": "https://example.org",
+    "role": "frontend",
+    "daysRequested": 2,
+    "minutesPerSession": 50
+  },
+  {
+    "jobDescription": "Must have data pipeline experience and Python. Must have SQL. Nice to have cloud experience.",
+    "companyUrl": "https://example.net",
+    "role": "data",
+    "daysRequested": 3,
+    "minutesPerSession": 40
+  },
+  {
+    "jobDescription": "Must have product sense and stakeholder communication. Must have experimentation. Nice to have analytics tooling.",
+    "companyUrl": "https://example.dev",
+    "role": "product",
+    "daysRequested": 2,
+    "minutesPerSession": 60
+  },
+  {
+    "jobDescription": "Must have Kubernetes experience and Go. Must have distributed systems. Nice to have observability experience.",
+    "companyUrl": "https://example.ai",
+    "role": "platform",
+    "daysRequested": 4,
+    "minutesPerSession": 45
+  }
+]

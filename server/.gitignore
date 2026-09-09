@@ -1,0 +1,10 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+output/
+*.log
+npm-debug.log*
