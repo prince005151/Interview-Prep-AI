@@ -10,8 +10,6 @@
     "test": "node --test tests/*.test.js",
     "evaluate": "node evaluate.js",
     "build": "npm run build --prefix frontend"
-
-
   },
   "keywords": [
     "express",

@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
+const path = require("path")
 
 const app = express();
 const { PORT, MONGO_URI, NODE_ENV, CLIENT_URL } = process.env;
@@ -40,6 +41,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Unexpected server error' });
 });
 
+
 const startServer = async () => {
   try {
     if (!MONGO_URI) {
@@ -48,6 +50,14 @@ const startServer = async () => {
 
     await mongoose.connect(MONGO_URI);
     console.log('MongoDB connected');
+
+    if (process.env.NODE_ENV === "production") {
+	    app.use(express.static(path.join(__dirname, "/client/dist")));
+
+	    app.use((req, res) => {
+	  	res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+	  });
+} 
 
     app.listen(PORT || 5000, () => {
       console.log(`Server running on port ${PORT || 5000}`);
