@@ -8,7 +8,9 @@
     "start": "node server.js",
     "lint": "node --check server.js",
     "test": "node --test tests/*.test.js",
-    "evaluate": "node evaluate.js"
+    "evaluate": "node evaluate.js",
+    "build": " npm install && npm install --prefix frontend && npm run build --prefix frontend"
+
   },
   "keywords": [
     "express",
