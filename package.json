@@ -1,0 +1,39 @@
+{
+  "name": "ai-interview-prep-server",
+  "version": "1.0.0",
+  "description": "Backend API for the AI Interview Prep Kit Generator",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "node --check server.js",
+    "test": "node --test tests/*.test.js",
+    "evaluate": "node evaluate.js",
+    "build": "npm run build --prefix client"
+
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "jwt",
+    "interview",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.2",
+    "morgan": "^1.10.0",
+    "qs": "^6.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
