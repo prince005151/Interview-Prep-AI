@@ -4,12 +4,12 @@
   "description": "Backend API for the AI Interview Prep Kit Generator",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "lint": "node --check server.js",
-    "test": "node --test tests/*.test.js",
-    "evaluate": "node evaluate.js",
-    "build": "npm run build --prefix client"
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "lint": "node --check server/server.js",
+    "test": "node --test server/tests/*.test.js",
+    "evaluate": "node server/evaluate.js",
+    "build": "npm ci --prefix client --include=dev && npm run build --prefix client"
 
   },
   "keywords": [

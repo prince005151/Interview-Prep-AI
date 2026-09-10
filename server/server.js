@@ -1,12 +1,11 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
-const path = require("path")
-
 const app = express();
 const { PORT, MONGO_URI, NODE_ENV, CLIENT_URL } = process.env;
 
@@ -51,11 +50,12 @@ const startServer = async () => {
     await mongoose.connect(MONGO_URI);
     console.log('MongoDB connected');
 
-    if (process.env.NODE_ENV === "production") {
-	    app.use(express.static(path.join(__dirname, "/client/dist")));
+    if (process.env.NODE_ENV === 'production') {
+      const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
 
-	     app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+      app.use(express.static(clientDistPath));
+      app.get('/{*splat}', (req, res) => {
+        res.sendFile(path.join(clientDistPath, 'index.html'));
       });
     }
     app.listen(PORT || 5000, () => {
