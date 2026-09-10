@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ai-interview-prep
+    runtime: node
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
