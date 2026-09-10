@@ -9,7 +9,8 @@
     "lint": "node --check server/server.js",
     "test": "node --test server/tests/*.test.js",
     "evaluate": "node server/evaluate.js",
-    "build": "npm ci --prefix client --include=dev && npm run build --prefix client"
+    "build": "npm ci --prefix client --include=dev && npm run build --prefix client",
+    "postinstall": "npm run build"
 
   },
   "keywords": [
